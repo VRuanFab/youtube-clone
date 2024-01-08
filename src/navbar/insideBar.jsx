@@ -19,7 +19,7 @@ function Categories() {
             </div>
 
             <div className={arrList[0]}>
-                Jogos
+                Filmes
             </div>
         </div>
     );
