@@ -19,7 +19,6 @@ function Categories() {
             </div>
 
             <div className={arrList[0]}>
-                Filmes
             </div>
         </div>
     );
