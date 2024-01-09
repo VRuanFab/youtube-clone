@@ -1,3 +1,4 @@
+//icons
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ImYoutube2 } from "react-icons/im";
 import { FaMicrophone } from "react-icons/fa";
@@ -5,8 +6,18 @@ import { IoIosSearch } from "react-icons/io";
 import { AiOutlineVideoCameraAdd } from "react-icons/ai";
 import { FaRegBell } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+
+//react
+import ProfileModal from "../components/modal_profile/profile";
+import { useState } from "react";
 
 function NavBar() {
+
+    const username = 'Nome de Usuário'
+
+    const [profile, openProfile] = useState(false)
+
     return (
         <div className="flex">
             <div className="flex w-screen">
@@ -31,9 +42,39 @@ function NavBar() {
                 <div className="flex self-center ml-[27%] space-x-2">
                     <AiOutlineVideoCameraAdd className="w-10 h-10 p-2 rounded-full hover:cursor-pointer hover:bg-white/15"/>
                     <FaRegBell className="w-10 h-10 p-2 rounded-full hover:cursor-pointer hover:bg-white/15"/>
-                    <div className="w-fit h-fit rounded-full hover:bg-white/15 hover:cursor-pointer"><FaRegUser className="w-10 h-10 p-2"/></div>
+                    <div className="w-fit h-fit rounded-full hover:bg-white/15 hover:cursor-pointer">
+                        <FaRegUser className="w-10 h-10 p-2" onClick={() => {openProfile(true)}}/>
+                    </div>
                 </div>
 
+                <ProfileModal isOpen={profile}>
+                        <div className="flex h-24 border-b-[1px] p-3">
+                            <div className="">
+                                <FaRegUser className="rounded-full w-10 h-10 mr-3 mt-4"/>
+                            </div>
+
+                            <div className="mt-3 grid">
+                                {username}
+                                <label>Acessar meu canal</label>
+                            </div>
+                        </div>
+
+                        <div className="p-3 border-b-[1px] pb-5">
+                            <div className="grid space-y-4">
+                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Conta do Google</label>
+                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Alternar Conta</label>
+                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Sair</label>
+                            </div>
+                        </div>
+
+                        <div className="p-3">
+                            <div className="grid space-y-4">
+                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>YouTube Studio</label>
+                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Compras e Assinaturas</label>
+                            </div>
+                        </div>
+                    
+                </ProfileModal>
             </div>
         </div>
     );
