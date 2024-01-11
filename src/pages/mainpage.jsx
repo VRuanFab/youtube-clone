@@ -5,14 +5,17 @@ import Thumb from "../components/thumb_video";
 import Categories from "../navbar/insideBar";
 
 //thumbs
-import darkSouls3 from '../img/thumbs/darkSouls3.jpg'
-import cut_my_lip from '../img/thumbs/cut_my_lip.jpeg'
-import valorant from '../img/thumbs/valorant_tmb.jpg'
+import darkSouls3 from '../img/thumbs/darkSouls3.jpg';
+import cut_my_lip from '../img/thumbs/cut_my_lip.jpeg';
+import valorant from '../img/thumbs/valorant_tmb.jpg';
 
 //icons
-import solaire from '../img/icons/solaire_icon.png'
-import twenty_icon from '../img/icons/twenty_icon.png'
-import raze_icon from '../img/icons/raze_icon.jpg'
+import solaire from '../img/icons/solaire_icon.png';
+import twenty_icon from '../img/icons/twenty_icon.png';
+import raze_icon from '../img/icons/raze_icon.jpg';
+
+//react
+import { useEffect } from "react";
 
 function Mainpage() {
 
