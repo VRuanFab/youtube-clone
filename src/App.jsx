@@ -5,13 +5,13 @@ import SideBar from "./navbar/sidebar"
 function App() {
 
   return (
-    <div className="w-screen h-screen bg-black text-black dark:text-white">
+    <div className="w-screen h-screen lg:scale-100 md:scale-100 xl:scale-100 bg-black dark:text-white">
       <div className="grid">
-        <div className="h-fit w-screen"> <NavBar/> </div>
+        <div className="w-screen"> <NavBar/> </div>
 
         <div className="flex">
-          <div className="h-fit w-fit"> <SideBar/> </div>
-          <div className="ml-11"> <Outlet/> </div>
+          <div className="h-fit w-fit lg:scale-100 md:scale-100 xl:scale-100 max-xl:hidden"> <SideBar/> </div>
+          <div className="ml-11 h-fit"> <Outlet/> </div>
         </div>
 
       </div>

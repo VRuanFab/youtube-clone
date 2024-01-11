@@ -38,7 +38,6 @@ function NavBar() {
         let closeModal = (e) => {
             if(!menuRef.current.contains(e.target)){
                 openProfile(false);
-                console.log(e.target);
             }
         };
 
@@ -120,21 +119,20 @@ function NavBar() {
                                 </div>
                             </div>
 
-                        <div className="p-3 pb-5">
+                        <div className={style[1]}>
                             <div className="grid space-y-4">
                                 <label className="flex"><IoMdHelpCircleOutline className={style[0]}/>Ajuda</label>
                                 <label className="flex"><MdOutlineFeedback className={style[0]}/>Enviar feedback</label>
                             </div>
                         </div>
                     
-                </ProfileModal>
-                            <div className="p-3 pb-5">
-                                <div className="grid space-y-4">
-                                    <label className="flex"><SiYoutubestudio className={style[0]}/>Ajuda</label>
-                                    <label className="flex"><AiOutlineDollar className={style[0]}/>Enviar feedback</label>
-                                </div>
+                        <div className={style[1]}>
+                            <div className="grid space-y-4">
+                                <label className="flex"><SiYoutubestudio className={style[0]}/>Ajuda</label>
+                                <label className="flex"><AiOutlineDollar className={style[0]}/>Enviar feedback</label>
                             </div>
-                        
+                        </div>
+
                     </ProfileModal>
                 </div>
             </div>

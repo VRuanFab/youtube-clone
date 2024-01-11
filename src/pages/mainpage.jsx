@@ -14,16 +14,13 @@ import solaire from '../img/icons/solaire_icon.png';
 import twenty_icon from '../img/icons/twenty_icon.png';
 import raze_icon from '../img/icons/raze_icon.jpg';
 
-//react
-import { useEffect } from "react";
-
 function Mainpage() {
 
     return ( 
         <div className="">
             <div className="mb-8"><Categories/></div>
             
-        <div className="grid grid-cols-5 space-x-2">
+        <div className="grid grid-cols-5 space-x-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 min-[760px]:w-8">
 
                 {Thumb(darkSouls3, solaire, 'How to farm sunlight medals in dark souls 3', 'The dark souls guy', '17 mil', '6 horas')}
 
