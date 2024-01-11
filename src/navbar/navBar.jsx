@@ -7,16 +7,42 @@ import { AiOutlineVideoCameraAdd } from "react-icons/ai";
 import { FaRegBell } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import { MdSwitchAccount } from "react-icons/md";
+import { FiLogOut } from "react-icons/fi";
+import { SiYoutubestudio } from "react-icons/si";
+import { AiOutlineDollar } from "react-icons/ai";
+import { FaUserShield } from "react-icons/fa";
+import { WiMoonWaxingCrescent2 } from "react-icons/wi";
+import { MdOutlineTranslate } from "react-icons/md";
+import { RiShieldUserFill } from "react-icons/ri";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { FaRegKeyboard } from "react-icons/fa";
 
 //react
 import ProfileModal from "../components/modal_profile/profile";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function NavBar() {
 
     const username = 'Nome de Usuário'
 
     const [profile, openProfile] = useState(false)
+
+    let modalRef = useRef();
+
+    useEffect(() => {
+
+        let closeModal = (e) => {
+            if(!modalRef.current.contains(e.target)){
+                openProfile(false)
+                console.log(e.target)
+            }
+        };
+
+        document.addEventListener('mousedown', closeModal);
+    });
+
+    const style = ["text-[22px] mr-7"]
 
     return (
         <div className="flex">
@@ -47,7 +73,7 @@ function NavBar() {
                     </div>
                 </div>
 
-                <ProfileModal isOpen={profile}>
+                <ProfileModal isOpen={profile} id="modal" ref={modalRef}>
                         <div className="flex h-24 border-b-[1px] p-3">
                             <div className="">
                                 <FaRegUser className="rounded-full w-10 h-10 mr-3 mt-4"/>
@@ -61,16 +87,40 @@ function NavBar() {
 
                         <div className="p-3 border-b-[1px] pb-5">
                             <div className="grid space-y-4">
-                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Conta do Google</label>
-                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Alternar Conta</label>
-                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Sair</label>
+                                <label className="flex"><FaGoogle className={style[0]}/>Conta do Google</label>
+                                <label className="flex"><MdSwitchAccount className={style[0]}/>Alternar Conta</label>
+                                <label className="flex"><FiLogOut className={style[0]}/>Sair</label>
                             </div>
                         </div>
 
-                        <div className="p-3">
+                        <div className="p-3 border-b-[1px] pb-5">
                             <div className="grid space-y-4">
-                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>YouTube Studio</label>
-                                <label className="flex"><FaGoogle className="text-[22px] mr-7"/>Compras e Assinaturas</label>
+                                <label className="flex"><SiYoutubestudio className={style[0]}/>YouTube Studio</label>
+                                <label className="flex"><AiOutlineDollar className={style[0]}/>Compras e Assinaturas</label>
+                            </div>
+                        </div>
+
+                        <div className="p-3 border-b-[1px] pb-5">
+                            <div className="grid space-y-4">
+                                <label className="flex"><RiShieldUserFill className={style[0]}/>Seus dados no YouTube</label>
+                                <label className="flex"><WiMoonWaxingCrescent2 className={style[0]}/>Aparência: tema do dispositivo</label>
+                                <label className="flex"><MdOutlineTranslate className={style[0]}/>Idioma: Português</label>
+                                <label className="flex"><FaUserShield className={style[0]}/>Modo restrito: desativado</label>
+                                <label className="flex"><AiOutlineGlobal className={style[0]}/>Local: Brasil</label>
+                                <label className="flex"><FaRegKeyboard className={style[0]}/>Atalhos do teclado</label>
+                            </div>
+                        </div>
+
+                        <div className="p-3 border-b-[1px] pb-5">
+                            <div className="grid space-y-4">
+                                <label className="flex"><SiYoutubestudio className={style[0]}/>Configurações</label>
+                            </div>
+                        </div>
+
+                        <div className="p-3 pb-5">
+                            <div className="grid space-y-4">
+                                <label className="flex"><SiYoutubestudio className={style[0]}/>Ajuda</label>
+                                <label className="flex"><AiOutlineDollar className={style[0]}/>Enviar feedback</label>
                             </div>
                         </div>
                     
