@@ -20,13 +20,27 @@ import { FaRegKeyboard } from "react-icons/fa";
 
 //react
 import ProfileModal from "../components/modal_profile/profile";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function NavBar() {
 
     const username = 'Nome de Usuário'
 
     const [profile, openProfile] = useState(false)
+
+    let modalRef = useRef();
+
+    useEffect(() => {
+
+        let closeModal = (e) => {
+            if(!modalRef.current.contains(e.target)){
+                openProfile(false)
+                console.log(e.target)
+            }
+        };
+
+        document.addEventListener('mousedown', closeModal);
+    });
 
     const style = ["text-[22px] mr-7"]
 
@@ -59,7 +73,7 @@ function NavBar() {
                     </div>
                 </div>
 
-                <ProfileModal isOpen={profile}>
+                <ProfileModal isOpen={profile} id="modal" ref={modalRef}>
                         <div className="flex h-24 border-b-[1px] p-3">
                             <div className="">
                                 <FaRegUser className="rounded-full w-10 h-10 mr-3 mt-4"/>
