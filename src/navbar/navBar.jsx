@@ -17,6 +17,9 @@ import { MdOutlineTranslate } from "react-icons/md";
 import { RiShieldUserFill } from "react-icons/ri";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FaRegKeyboard } from "react-icons/fa";
+import { GoGear } from "react-icons/go";
+import { IoMdHelpCircleOutline } from "react-icons/io";
+import { MdOutlineFeedback } from "react-icons/md";
 
 //react
 import ProfileModal from "../components/modal_profile/profile";
@@ -28,7 +31,7 @@ function NavBar() {
 
     const [profile, openProfile] = useState(false)
 
-    const style = ["text-[22px] mr-7"]
+    const style = ["text-[22px] mr-4", "p-3 border-b-[1px] border-white/25 pb-3"]
 
     return (
         <div className="flex">
@@ -60,7 +63,8 @@ function NavBar() {
                 </div>
 
                 <ProfileModal isOpen={profile}>
-                        <div className="flex h-24 border-b-[1px] p-3">
+                    
+                        <div className="flex h-24 border-b-[1px] border-white/25 p-3">
                             <div className="">
                                 <FaRegUser className="rounded-full w-10 h-10 mr-3 mt-4"/>
                             </div>
@@ -71,7 +75,7 @@ function NavBar() {
                             </div>
                         </div>
 
-                        <div className="p-3 border-b-[1px] pb-5">
+                        <div className={style[1]}>
                             <div className="grid space-y-4">
                                 <label className="flex"><FaGoogle className={style[0]}/>Conta do Google</label>
                                 <label className="flex"><MdSwitchAccount className={style[0]}/>Alternar Conta</label>
@@ -79,14 +83,14 @@ function NavBar() {
                             </div>
                         </div>
 
-                        <div className="p-3 border-b-[1px] pb-5">
+                        <div className={style[1]}>
                             <div className="grid space-y-4">
                                 <label className="flex"><SiYoutubestudio className={style[0]}/>YouTube Studio</label>
                                 <label className="flex"><AiOutlineDollar className={style[0]}/>Compras e Assinaturas</label>
                             </div>
                         </div>
 
-                        <div className="p-3 border-b-[1px] pb-5">
+                        <div className={style[1]}>
                             <div className="grid space-y-4">
                                 <label className="flex"><RiShieldUserFill className={style[0]}/>Seus dados no YouTube</label>
                                 <label className="flex"><WiMoonWaxingCrescent2 className={style[0]}/>Aparência: tema do dispositivo</label>
@@ -97,16 +101,16 @@ function NavBar() {
                             </div>
                         </div>
 
-                        <div className="p-3 border-b-[1px] pb-5">
+                        <div className={style[1]}>
                             <div className="grid space-y-4">
-                                <label className="flex"><SiYoutubestudio className={style[0]}/>Configurações</label>
+                                <label className="flex"><GoGear className={style[0]}/>Configurações</label>
                             </div>
                         </div>
 
                         <div className="p-3 pb-5">
                             <div className="grid space-y-4">
-                                <label className="flex"><SiYoutubestudio className={style[0]}/>Ajuda</label>
-                                <label className="flex"><AiOutlineDollar className={style[0]}/>Enviar feedback</label>
+                                <label className="flex"><IoMdHelpCircleOutline className={style[0]}/>Ajuda</label>
+                                <label className="flex"><MdOutlineFeedback className={style[0]}/>Enviar feedback</label>
                             </div>
                         </div>
                     
