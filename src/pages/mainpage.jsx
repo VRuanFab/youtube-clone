@@ -20,7 +20,7 @@ function Mainpage() {
         <div className="">
             <div className="mb-8"><Categories/></div>
             
-        <div className="grid grid-cols-5 space-x-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 min-[760px]:w-8">
+        <div className="grid 2xl:grid-cols-5 space-x-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
 
                 {Thumb(darkSouls3, solaire, 'How to farm sunlight medals in dark souls 3', 'The dark souls guy', '17 mil', '6 horas')}
 
