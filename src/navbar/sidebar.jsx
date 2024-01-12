@@ -8,7 +8,7 @@ function SideBar() {
     const iconsAlign = ["grid justify-center hover:bg-white/15 p-3 hover:cursor-pointer rounded-md", 'text-2xl place-self-center', "text-[12px] mt-[5px]"]
 
     return (
-        <div className="border-1 grid h-screen w-[4.5rem]">
+        <div className="border-1 grid h-screen xl:w-[2rem] 2xl:w-[4.5rem] mr-2">
             <div className="mt-3 justify-self-center space-y-3">
 
                 <div className={iconsAlign[0]}>
