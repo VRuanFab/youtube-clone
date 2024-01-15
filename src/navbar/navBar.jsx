@@ -48,7 +48,7 @@ function NavBar() {
 
     return (
         <div className="flex">
-            <div className="flex w-screen justify-start relative">
+            <div className="flex w-screen bg-neutral-950 justify-start relative">
 
                 <div className="flex">
                     <RxHamburgerMenu className="ml-[1.1rem] place-self-center rounded-full w-10 h-10 p-2
@@ -57,7 +57,7 @@ function NavBar() {
                     hover:text-red-500 hover:cursor-pointer"/>
                 </div>
 
-                <div className="flex 2xl:ml-[33rem] xl:ml-[18rem]">
+                <div className="flex right-[36%] max-sm:left[40%] top-[13px] absolute">
                     <input type="text" id="pesquisa" placeholder="não funciona" className=" place-self-center
                     bg-black border-[0.8px] border-white/15 rounded-l-full indent-[0.8rem] pl-[4px] text-pretty 2xl:w-[26rem] xl:w-[20rem] h-[2.5rem]
                     ring-0 outline-0 focus:border-white/35"/>
@@ -67,7 +67,7 @@ function NavBar() {
                     hover:bg-white/25"/>
                 </div>
 
-                <div className="flex self-center space-x-2 right-9 fixed">
+                <div className="flex self-center space-x-2 right-9 absolute">
                     <AiOutlineVideoCameraAdd className="w-10 h-10 p-2 rounded-full hover:cursor-pointer hover:bg-white/15"/>
                     <FaRegBell className="w-10 h-10 p-2 rounded-full hover:cursor-pointer hover:bg-white/15"/>
                     <div className="w-fit h-fit rounded-full hover:bg-white/15 hover:cursor-pointer">
@@ -77,48 +77,49 @@ function NavBar() {
 
                 <div ref={menuRef}>
                     <ProfileModal isOpen={profile} id="modal">
-                            <div className="flex h-24 border-b-[1px] p-3">
-                                <div className="">
-                                    <FaRegUser className="rounded-full w-10 h-10 mr-3 mt-4"/>
-                                </div>
 
-                                <div className="mt-3 grid">
-                                    {username}
-                                    <label>Acessar meu canal</label>
-                                </div>
+                        <div className="flex h-24 border-b-[1px] p-3 border-white/25">
+                            <div className="">
+                                <FaRegUser className="rounded-full w-10 h-10 mr-3 mt-4"/>
                             </div>
 
-                            <div className={style[1]}>
-                                <div className="grid space-y-4">
-                                    <label className="flex"><FaGoogle className={style[0]}/>Conta do Google</label>
-                                    <label className="flex"><MdSwitchAccount className={style[0]}/>Alternar Conta</label>
-                                    <label className="flex"><FiLogOut className={style[0]}/>Sair</label>
-                                </div>
+                            <div className="mt-3 grid">
+                                {username}
+                                <label>Acessar meu canal</label>
                             </div>
+                        </div>
 
-                            <div className={style[1]}>
-                                <div className="grid space-y-4">
-                                    <label className="flex"><SiYoutubestudio className={style[0]}/>YouTube Studio</label>
-                                    <label className="flex"><AiOutlineDollar className={style[0]}/>Compras e Assinaturas</label>
-                                </div>
+                        <div className={style[1]}>
+                            <div className="grid space-y-4">
+                                <label className="flex"><FaGoogle className={style[0]}/>Conta do Google</label>
+                                <label className="flex"><MdSwitchAccount className={style[0]}/>Alternar Conta</label>
+                                <label className="flex"><FiLogOut className={style[0]}/>Sair</label>
                             </div>
+                        </div>
 
-                            <div className={style[1]}>
-                                <div className="grid space-y-4">
-                                    <label className="flex"><RiShieldUserFill className={style[0]}/>Seus dados no YouTube</label>
-                                    <label className="flex"><WiMoonWaxingCrescent2 className={style[0]}/>Aparência: tema do dispositivo</label>
-                                    <label className="flex"><MdOutlineTranslate className={style[0]}/>Idioma: Português</label>
-                                    <label className="flex"><FaUserShield className={style[0]}/>Modo restrito: desativado</label>
-                                    <label className="flex"><AiOutlineGlobal className={style[0]}/>Local: Brasil</label>
-                                    <label className="flex"><FaRegKeyboard className={style[0]}/>Atalhos do teclado</label>
-                                </div>
+                        <div className={style[1]}>
+                            <div className="grid space-y-4">
+                                <label className="flex"><SiYoutubestudio className={style[0]}/>YouTube Studio</label>
+                                <label className="flex"><AiOutlineDollar className={style[0]}/>Compras e Assinaturas</label>
                             </div>
+                        </div>
 
-                            <div className={style[1]}>
-                                <div className="grid space-y-4">
-                                    <label className="flex"><GoGear className={style[0]}/>Configurações</label>
-                                </div>
+                        <div className={style[1]}>
+                            <div className="grid space-y-4">
+                                <label className="flex"><RiShieldUserFill className={style[0]}/>Seus dados no YouTube</label>
+                                <label className="flex"><WiMoonWaxingCrescent2 className={style[0]}/>Aparência: tema do dispositivo</label>
+                                <label className="flex"><MdOutlineTranslate className={style[0]}/>Idioma: Português</label>
+                                <label className="flex"><FaUserShield className={style[0]}/>Modo restrito: desativado</label>
+                                <label className="flex"><AiOutlineGlobal className={style[0]}/>Local: Brasil</label>
+                                <label className="flex"><FaRegKeyboard className={style[0]}/>Atalhos do teclado</label>
                             </div>
+                        </div>
+
+                        <div className={style[1]}>
+                            <div className="grid space-y-4">
+                                <label className="flex"><GoGear className={style[0]}/>Configurações</label>
+                            </div>
+                        </div>
 
                         <div className={style[1]}>
                             <div className="grid space-y-4">
@@ -133,7 +134,6 @@ function NavBar() {
                                 <label className="flex"><AiOutlineDollar className={style[0]}/>Enviar feedback</label>
                             </div>
                         </div>
-
                     </ProfileModal>
                 </div>
 
