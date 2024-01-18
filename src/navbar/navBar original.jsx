@@ -21,24 +21,13 @@ import { GoGear } from "react-icons/go";
 import { IoMdHelpCircleOutline } from "react-icons/io";
 import { MdOutlineFeedback } from "react-icons/md";
 
-import { MdHomeFilled } from "react-icons/md";
-import { SiYoutubeshorts } from "react-icons/si";
-import { BsCollectionPlay } from "react-icons/bs";
-import { MdOutlineVideoLibrary } from "react-icons/md";
-import { BsPersonSquare } from "react-icons/bs";
-import { LuHistory } from "react-icons/lu";
-import { CgPlayButtonR } from "react-icons/cg";
-import { GoClock } from "react-icons/go";
-import { HiMiniScissors } from "react-icons/hi2";
-import { FaChevronDown } from "react-icons/fa6";
-
 //react
 import ProfileModal from "../components/modal_profile/profile";
 import { useState, useEffect, useRef } from "react";
 
-import SideBar from "./sidebar";
-
 function NavBar() {
+
+    const username = 'Nome de Usuário'
 
     const [profile, openProfile] = useState(false)
 
